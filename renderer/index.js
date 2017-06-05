@@ -12,6 +12,8 @@ const render        = require('./tasks/render');
 const verify        = require('./tasks/verify');
 const actions       = require('./tasks/actions');
 const cleanup       = require('./tasks/cleanup');
+const encode        = require('./tasks/encode');
+const upload        = require('./tasks/upload');
 
 const Project       = require('../api/models/project');
 
@@ -39,9 +41,12 @@ function applyTasks(project, resolve, reject) {
         .then(verify)
         .then(actions)
         .then(cleanup)
+        .then(encode)
+        .then(upload)
         .then((project) => {
 
             console.info('----------------------------');
+            console.info(project);
             console.info(`[${project.uid}] project finished`);
             console.info('----------------------------\n');
 
