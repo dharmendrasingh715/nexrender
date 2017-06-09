@@ -20,7 +20,7 @@ module.exports = function(project) {
 
         var dest = src.replace('mov', 'mp4');
 
-        hbjs.spawn({ input: src, output: dest })
+        hbjs.spawn({ input: src, output: dest, preset: 'High Profile'})
         .on('error', function(err){
             return reject(new Error('Error converting to mp4, did project rendered properly?'));
         })

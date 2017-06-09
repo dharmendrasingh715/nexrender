@@ -51,6 +51,7 @@ module.exports = function(project) {
         var uploader = client.uploadFile(params);
             uploader.on('error', function(err) {
             console.info("unable to upload:", err.stack);
+            return reject(new Error('Unable to upload to s3'));
         });
 
         uploader.on('progress', function() {
