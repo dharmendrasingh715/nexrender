@@ -2,8 +2,8 @@
 const s3        = require('s3');
 const path      = require('path');
 const fs        = require('fs-extra');
-const key       = 'AKIAILSDJGVYT72EUVWQ';
-const secret    = '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';
+const key       = ''; //Add key
+const secret    = ''; //Add secret
 
 const RESULTS_DIR = process.env.RESULTS_DIR || 'results';
 
